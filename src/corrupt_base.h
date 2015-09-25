@@ -18,9 +18,12 @@ namespace corruptme
   public:
     corruptfile(std::string filename,bool isBinary = true); //to asscociate the file obj with the file filename
     corruptfile(FILE *f);         //to init the c file ptr with FILE* f
-    corruptfile(char* filename);  //to create a FILE ptr to the file filename
+    corruptfile(const char* filename);  //to create a FILE ptr to the file filename
     corruptfile(void);            // default ctor
     ~corruptfile();               //dtor : closes all open file streams
+    void AddFile(std::string filename,bool isBinary = true);
+    void AddFile(FILE *f);
+    void AddFile(const char* filename);
 
   };
 }

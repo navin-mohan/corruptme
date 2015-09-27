@@ -8,4 +8,4 @@ Navigating the code
 
 The corruptfile class provides the basic file streams (including C style file pointers) container that can be extended to include different corruption methods. 
 
-The methods header file contains all the derived method classes avalable.
+The methods header file contains all the derived method classes available.

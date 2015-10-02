@@ -14,8 +14,8 @@ bool corruptme::RandomCharsMethod::AddRandomChars(std::string randtxt /*= std::s
   std::strcpy(buf,randchars.c_str());
 
   srand(time(NULL));
-  for(int i=1;i<100;i++){
-    int pos = rand() % 100 + 1;
+  for(int i=1;i<1000;i++){
+    int pos = rand() % 1000 + 1;
     file.seekg(pos);
     file.write(buf,7);
     file.read(buf,7);

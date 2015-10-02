@@ -1,4 +1,7 @@
 #include <cstring>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "methods.h"
 
 corruptme::RandomCharsMethod::RandomCharsMethod(){
@@ -9,8 +12,11 @@ bool corruptme::RandomCharsMethod::AddRandomChars(std::string randtxt /*= std::s
   if(randtxt != std::string())  randchars = randtxt; //by default the random str initialized in ctor is used
   char* buf = new char[randchars.length() + 1];
   std::strcpy(buf,randchars.c_str());
-  for(int i=1;i<20;i++){
-    file.seekg(i*14);
+
+  srand(time(NULL));
+  for(int i=1;i<100;i++){
+    int pos = rand() % 100 + 1;
+    file.seekg(pos);
     file.write(buf,7);
     file.read(buf,7);
   }
